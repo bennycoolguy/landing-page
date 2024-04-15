@@ -7,10 +7,16 @@ body {
 }
 
 header {
-    background-color: #0056b3;
-    color: white;
+    background-color: #f5f5dc; /* Beige color */
+    color: black;
     padding: 20px;
     text-align: center;
+}
+
+#logo {
+    max-width: 100px; /* Adjust size as needed */
+    display: block;
+    margin: 0 auto 10px;
 }
 
 nav {
