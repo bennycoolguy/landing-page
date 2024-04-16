@@ -25,21 +25,21 @@
     <script>
         var stripe = Stripe('pk_live_51P5t6VP5Z6pEw2i05PXUDUMvhbMyECWzswPjqsOXm75KBjZlWeJEIUJZCifFIJx3twZML16elnV5Ov675wUwqyUo00IpuvCjdM'); // Replace with your Stripe public key
 
-        document.getElementById('checkout-button').addEventListener('click', function() {
-            stripe.redirectToCheckout({
-                lineItems: [{
-                    price: 'prod_Pw6uNxHar2cXqI', // Replace with the Price ID from Stripe
-                    quantity: 1
-                }],
-                mode: 'payment',
-                successUrl: 'https://bshoshan.com/success.html',
-                cancelUrl: 'https://bshoshan.com/cancel.html',
-            }).then(function (result) {
-                if (result.error) {
-                    alert(result.error.message);
-                }
-            });
-        });
+        document.getElementById('checkout-button').addEventListener('click', function () {
+    stripe.redirectToCheckout({
+        lineItems: [{
+            price: 'price_1P6Eh4P5Z6pEw2i0yQtgxnzr', // Replace with the Price ID from Stripe
+            quantity: 1
+        }],
+        mode: 'payment',
+        successUrl: 'https://yourdomain.com/success.html',
+        cancelUrl: 'https://yourdomain.com/cancel.html',
+    }).then(function (result) {
+        if (result.error) {
+            alert(result.error.message);
+        }
+    });
+});
     </script>
     <footer>
         <p>Copyright © Your Company 2021</p>
