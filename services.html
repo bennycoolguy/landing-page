@@ -3,46 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Stripe Payment</title>
-    <link rel="stylesheet" href="styles.css"> <!-- If you have a CSS file, link it here -->
-    <script src="https://js.stripe.com/v3/"></script> <!-- Stripe.js library -->
+    <title>Services - Secure Checkout</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS file -->
+    <style>
+        .checkout-button {
+            display: inline-block;
+            background-color: #4CAF50; /* Green background for visibility */
+            color: white; /* White text color */
+            padding: 15px 32px; /* Padding around the text */
+            text-align: center; /* Center the text inside the button */
+            text-decoration: none; /* Remove underline from the link */
+            font-size: 16px; /* Set font size */
+            cursor: pointer; /* Change mouse cursor to pointer */
+            border-radius: 5px; /* Rounded corners for the button */
+            border: none; /* No border */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .checkout-button:hover {
+            background-color: #45a049; /* Darker shade of green on hover */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <!-- You can add navigation here -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <!-- Add other navigation items if needed -->
-            </ul>
-        </nav>
+        <h1>Welcome to Our Services</h1>
+        <p>Click below to securely complete your purchase.</p>
     </header>
-    <main>
-        <h1>Our Services</h1>
-        <button id="checkout-button">Pay with Stripe</button>
-    </main>
-    <script>
-        var stripe = Stripe('pk_live_51P5t6VP5Z6pEw2i05PXUDUMvhbMyECWzswPjqsOXm75KBjZlWeJEIUJZCifFIJx3twZML16elnV5Ov675wUwqyUo00IpuvCjdM'); // Replace with your Stripe public key
 
-        document.getElementById('checkout-button').addEventListener('click', function () {
-    stripe.redirectToCheckout({
-        lineItems: [{
-            price: 'price_1P6Eh4P5Z6pEw2i0yQtgxnzr', // Replace with the Price ID from Stripe
-            quantity: 1
-        }],
-        mode: 'payment',
-        successUrl: 'https://yourdomain.com/success.html',
-        cancelUrl: 'https://yourdomain.com/cancel.html',
-    }).then(function (result) {
-        if (result.error) {
-            alert(result.error.message);
-        }
-    });
-});
-    </script>
+    <main>
+        <a href="https://buy.stripe.com/28o5kAdoCgeR4iA6oo" target="_blank" class="checkout-button">Proceed to Checkout</a>
+    </main>
+
     <footer>
-        <p>Copyright © Your Company 2021</p>
+        <p>Contact us at info@yourdomain.com</p>
     </footer>
 </body>
 </html>
+
