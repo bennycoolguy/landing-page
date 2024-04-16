@@ -6,10 +6,17 @@
     <title>Services - Secure Checkout</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS file -->
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            margin: 0; /* Remove default margin */
+        }
         .checkout-button {
             display: inline-block;
-            background-color: #4CAF50; /* Green background for visibility */
-            color: white; /* White text color */
+            background-color: #333; /* Black background */
+            color: #ccc; /* Gray text color */
             padding: 15px 32px; /* Padding around the text */
             text-align: center; /* Center the text inside the button */
             text-decoration: none; /* Remove underline from the link */
@@ -21,13 +28,28 @@
         }
 
         .checkout-button:hover {
-            background-color: #45a049; /* Darker shade of green on hover */
+            background-color: #444; /* Darker shade of black on hover */
+            color: #fff; /* White text color on hover */
+        }
+
+        header, footer {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+
+        header {
+            top: 20px;
+        }
+
+        footer {
+            bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to SEA GC LLC </h1>
+        <h1>Welcome to SEA GC LLC</h1>
         <p>Click below to securely complete your purchase.</p>
     </header>
 
@@ -40,4 +62,3 @@
     </footer>
 </body>
 </html>
-
