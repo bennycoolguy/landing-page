@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background-color: #f5f5dc; /* Beige color */
-    color: black;
+    background-color: white; /* Sets background color to white */
+    color: black; /* Sets text color to black for contrast */
     padding: 20px;
     text-align: center;
 }
@@ -16,7 +16,7 @@ header {
 #logo {
     max-width: 100px; /* Adjust size as needed */
     display: block;
-    margin: 0 auto 10px;
+    margin: 0 auto 10px; /* Centers the logo horizontally */
 }
 
 nav {
