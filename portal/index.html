@@ -81,6 +81,16 @@ tailwind.config = { theme: { extend: { colors: {
 
   <div id="lead-list" class="space-y-3"></div>
 
+  <!-- Broker view: shown only when the decrypted payload includes _all_agents -->
+  <div id="broker-view" class="hidden mt-16">
+    <div class="border-t-2 border-wine-500 pt-8 mb-6">
+      <p class="text-xs uppercase tracking-widest text-wine-500 mb-1">Broker view</p>
+      <h2 class="font-display text-3xl font-semibold tracking-tight">All agents' pipelines</h2>
+      <p class="mt-2 text-sm text-brown-700">Every active agent's top leads of the day. Confidential — broker-only view.</p>
+    </div>
+    <div id="agents-list" class="space-y-4"></div>
+  </div>
+
   <div class="mt-12 pt-6 border-t border-tan-400/40 text-xs text-brown-700">
     <p>Status changes are saved to this browser only. Cross-device sync is a planned upgrade.</p>
     <p class="mt-2"><strong>Confidentiality:</strong> These leads are proprietary to SEA GC Realty and may include personal information of property owners. Do not share, screenshot, or distribute outside the brokerage. Use Forewarn before contacting any owner.</p>
@@ -185,6 +195,66 @@ function renderLeads(payload) {
       });
     });
   });
+
+  // BROKER VIEW: if payload includes _all_agents, render the all-agents section
+  const brokerView = document.getElementById('broker-view');
+  const agentsList = document.getElementById('agents-list');
+  if (Array.isArray(payload._all_agents) && payload._all_agents.length > 0) {
+    brokerView.classList.remove('hidden');
+    agentsList.innerHTML = '';
+    payload._all_agents.forEach((a, ai) => {
+      const aGen = a.generated_at ? new Date(a.generated_at).toLocaleString() : '—';
+      const card = document.createElement('details');
+      card.className = 'border border-tan-400/40 bg-white';
+      card.open = ai === 0;  // first agent expanded by default
+      const summary = document.createElement('summary');
+      summary.className = 'cursor-pointer px-5 py-4 flex items-center justify-between hover:bg-cream-100 transition list-none';
+      summary.innerHTML = `
+        <div class="flex items-baseline gap-4">
+          <div class="font-display text-2xl text-black">${a.agent_name}</div>
+          <div class="text-xs uppercase tracking-widest text-tan-600">${a.agent_id}</div>
+        </div>
+        <div class="text-xs text-brown-700 text-right">
+          <div>${a.top_n} top of ${a.total_matched} matches</div>
+          <div class="text-tan-600">${aGen}</div>
+        </div>
+      `;
+      card.appendChild(summary);
+      const inner = document.createElement('div');
+      inner.className = 'border-t border-tan-400/40 divide-y divide-tan-400/20';
+      a.leads.forEach((lead, i) => {
+        const row = document.createElement('div');
+        row.className = 'px-5 py-3 grid md:grid-cols-12 gap-3 text-sm items-center hover:bg-cream-50';
+        row.innerHTML = `
+          <div class="md:col-span-1 text-center">
+            <div class="font-display text-xl text-wine-500 leading-none">${(i+1).toString().padStart(2,'0')}</div>
+            <div class="text-[9px] uppercase tracking-widest text-tan-600 mt-1">${lead.score}</div>
+          </div>
+          <div class="md:col-span-5">
+            <div class="font-medium text-black">${lead.address || ''}</div>
+            <div class="text-xs text-brown-700 mt-0.5">${lead.city || ''}, FL ${lead.zip || ''} · ${lead.subtype || ''}</div>
+          </div>
+          <div class="md:col-span-2 text-xs">
+            <div class="text-tan-600 uppercase tracking-widest">${lead.status || ''}</div>
+            <div class="text-brown-700">${lead.status_change_date || ''} · DOM ${lead.dom || 0}</div>
+          </div>
+          <div class="md:col-span-2 text-xs">
+            <div class="text-brown-700">${lead.beds || '—'} BD · ${lead.baths || '—'} BA</div>
+            <div class="text-brown-700">${lead.sqft ? Number(lead.sqft).toLocaleString() + ' sqft' : '—'}</div>
+          </div>
+          <div class="md:col-span-2 text-right">
+            <div class="font-display text-lg text-black">${fmt(lead.list_price)}</div>
+            <div class="text-[10px] text-brown-700/60">MLS# ${lead.mls}</div>
+          </div>
+        `;
+        inner.appendChild(row);
+      });
+      card.appendChild(inner);
+      agentsList.appendChild(card);
+    });
+  } else {
+    brokerView.classList.add('hidden');
+  }
 }
 
 let currentSlug = null;
