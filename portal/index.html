@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Agent Portal — SEA GC Realty</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="../images/sea-gc-logo.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  cream:  { 50:'#fbf8f3', 100:'#f5efe3', 200:'#ece2cd' },
+  tan:    { 300:'#d4b896', 400:'#c4a574', 500:'#a88554', 600:'#8a6a3f' },
+  gold:   { 400:'#d4a017', 500:'#b8860b', 600:'#8c660a' },
+  brown:  { 700:'#4a3b2a', 800:'#332817' },
+  wine:   { 500:'#8b2622', 600:'#6b1d1a', 700:'#4d1412' },
+  silver: { 100:'#e8e6e3', 300:'#c0c0c0', 500:'#888' }
+}}}}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .status-new      { background: #fbf8f3; color: #4a3b2a; border: 1px solid #c4a574; }
+  .status-contacted{ background: #d4a017; color: #fbf8f3; }
+  .status-hot      { background: #8b2622; color: #fbf8f3; }
+  .status-dead     { background: #888;    color: #fbf8f3; }
+  .status-closed   { background: #4a3b2a; color: #d4a017; }
+</style>
+</head>
+<body class="bg-cream-50 text-black antialiased min-h-screen">
+
+<nav class="bg-cream-50/90 backdrop-blur border-b border-tan-400/40">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../images/sea-gc-logo.png?v=3" alt="SEA GC Realty" class="h-9 md:h-10 w-auto">
+      <span class="font-display text-xl md:text-2xl font-semibold tracking-tight">SEA GC Realty</span>
+    </a>
+    <div class="text-xs uppercase tracking-wider text-tan-600">Agent Portal</div>
+  </div>
+</nav>
+
+<!-- Login view -->
+<section id="login-view" class="max-w-md mx-auto px-6 py-16">
+  <h1 class="font-display text-4xl font-semibold tracking-tight mb-2">Agent log in.</h1>
+  <p class="text-sm text-brown-700 mb-8">Enter your agent slug and the password the broker shared with you.</p>
+  <form id="login-form" class="space-y-5" autocomplete="off">
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-tan-600 mb-2" for="slug">Agent slug</label>
+      <input id="slug" type="text" required autocomplete="username" placeholder="jane-doe"
+        class="w-full border border-tan-400 bg-cream-50 px-4 py-3 focus:outline-none focus:border-wine-500 transition">
+    </div>
+    <div>
+      <label class="block text-xs uppercase tracking-widest text-tan-600 mb-2" for="password">Password</label>
+      <input id="password" type="password" required autocomplete="current-password"
+        class="w-full border border-tan-400 bg-cream-50 px-4 py-3 focus:outline-none focus:border-wine-500 transition">
+    </div>
+    <div>
+      <button type="submit" id="login-btn"
+        class="w-full bg-wine-500 hover:bg-wine-600 text-cream-50 font-medium px-6 py-3 transition uppercase tracking-wider text-sm">
+        Log in
+      </button>
+    </div>
+    <div id="login-error" class="hidden text-sm text-wine-600 border-l-4 border-wine-500 pl-3 py-2"></div>
+    <p class="text-xs text-brown-700/70 mt-6">If you do not have credentials yet, contact the broker at (561) 552-2771.</p>
+  </form>
+</section>
+
+<!-- Dashboard view (hidden until login) -->
+<section id="dashboard-view" class="hidden max-w-6xl mx-auto px-6 py-10">
+  <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
+    <div>
+      <p class="text-xs uppercase tracking-widest text-tan-600 mb-1">Welcome,</p>
+      <h1 id="agent-greeting" class="font-display text-3xl md:text-4xl font-semibold tracking-tight"></h1>
+      <p id="lead-summary" class="mt-2 text-sm text-brown-700"></p>
+    </div>
+    <button id="logout-btn" class="text-xs uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-cream-50 transition">Log out</button>
+  </div>
+
+  <div id="lead-list" class="space-y-3"></div>
+
+  <div class="mt-12 pt-6 border-t border-tan-400/40 text-xs text-brown-700">
+    <p>Status changes are saved to this browser only. Cross-device sync is a planned upgrade.</p>
+    <p class="mt-2"><strong>Confidentiality:</strong> These leads are proprietary to SEA GC Realty and may include personal information of property owners. Do not share, screenshot, or distribute outside the brokerage. Use Forewarn before contacting any owner.</p>
+  </div>
+</section>
+
+<script>
+// ============================================================
+// Crypto: AES-GCM-256 + PBKDF2-SHA256 (matches encrypt_lead_file.py)
+// ============================================================
+function b64ToBytes(b64) {
+  const binary = atob(b64);
+  const arr = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) arr[i] = binary.charCodeAt(i);
+  return arr;
+}
+
+async function decryptPayload(encrypted, password) {
+  const salt = b64ToBytes(encrypted.salt);
+  const nonce = b64ToBytes(encrypted.nonce);
+  const ct = b64ToBytes(encrypted.ct);
+  const enc = new TextEncoder();
+  const passKey = await crypto.subtle.importKey(
+    'raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']
+  );
+  const aesKey = await crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt, iterations: encrypted.iterations || 200000, hash: 'SHA-256' },
+    passKey,
+    { name: 'AES-GCM', length: 256 },
+    false, ['decrypt']
+  );
+  const plaintext = await crypto.subtle.decrypt(
+    { name: 'AES-GCM', iv: nonce }, aesKey, ct
+  );
+  return JSON.parse(new TextDecoder().decode(plaintext));
+}
+
+// ============================================================
+// UI
+// ============================================================
+const STATUSES = ['new', 'contacted', 'hot', 'dead', 'closed'];
+
+function statusFor(mls, defaultStatus) {
+  const key = 'lead-status:' + (currentSlug || '') + ':' + mls;
+  return localStorage.getItem(key) || defaultStatus || 'new';
+}
+function setStatusFor(mls, status) {
+  const key = 'lead-status:' + (currentSlug || '') + ':' + mls;
+  localStorage.setItem(key, status);
+}
+
+function fmt(n) { return '$' + Number(n || 0).toLocaleString(); }
+
+function renderLeads(payload) {
+  document.getElementById('agent-greeting').textContent = payload.agent_name || payload.agent_id;
+  const generated = payload.generated_at ? new Date(payload.generated_at).toLocaleString() : '—';
+  document.getElementById('lead-summary').textContent =
+    `${payload.top_n} top leads (of ${payload.total_matched} matches) · refreshed ${generated}`;
+
+  const list = document.getElementById('lead-list');
+  list.innerHTML = '';
+  payload.leads.forEach((lead, i) => {
+    const status = statusFor(lead.mls, lead.contact_status);
+    const card = document.createElement('div');
+    card.className = 'bg-white border border-tan-400/40 p-5 grid md:grid-cols-12 gap-4 items-start';
+    card.innerHTML = `
+      <div class="md:col-span-1 text-center">
+        <div class="font-display text-3xl text-wine-500 leading-none">${(i+1).toString().padStart(2,'0')}</div>
+        <div class="text-[10px] uppercase tracking-widest text-tan-600 mt-1">Score ${lead.score}</div>
+      </div>
+      <div class="md:col-span-5">
+        <div class="font-display text-xl text-black">${lead.address || ''}</div>
+        <div class="text-xs text-brown-700 mt-1">${lead.city || ''}, FL ${lead.zip || ''} · ${lead.county || ''}</div>
+        <div class="text-xs text-tan-600 uppercase tracking-widest mt-2">${lead.subtype || ''} · ${lead.beds || '—'} BD · ${lead.baths || '—'} BA · ${lead.sqft ? Number(lead.sqft).toLocaleString() + ' sqft' : '—'}</div>
+      </div>
+      <div class="md:col-span-3 text-sm text-brown-700">
+        <div><span class="text-xs uppercase tracking-widest text-tan-600">Owner</span><br>${lead.owner_name || '— (run Forewarn)'}</div>
+        <div class="mt-3"><span class="text-xs uppercase tracking-widest text-tan-600">Prior listing agent</span><br>${lead.prior_list_agent || '—'}</div>
+        <div class="text-xs text-brown-700/60">${lead.prior_list_office || ''}</div>
+      </div>
+      <div class="md:col-span-3 text-sm text-brown-700">
+        <div class="font-display text-2xl text-black">${fmt(lead.list_price)}</div>
+        <div class="text-xs text-tan-600 uppercase tracking-widest mt-1">${lead.status || ''} · ${lead.status_change_date || ''}</div>
+        <div class="text-xs mt-1">DOM ${lead.dom || 0} · MLS# ${lead.mls}</div>
+        <div class="mt-3 flex flex-wrap gap-1" data-status-buttons data-mls="${lead.mls}">
+          ${STATUSES.map(s => `<button data-status="${s}" class="status-btn text-[10px] uppercase tracking-widest px-2 py-1 status-${s} ${status===s?'ring-2 ring-black ring-offset-1':''}">${s}</button>`).join('')}
+        </div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+  // Wire up status buttons
+  list.querySelectorAll('[data-status-buttons]').forEach(group => {
+    const mls = group.dataset.mls;
+    group.querySelectorAll('.status-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const s = btn.dataset.status;
+        setStatusFor(mls, s);
+        // refresh button highlights in this group
+        group.querySelectorAll('.status-btn').forEach(b => b.classList.remove('ring-2','ring-black','ring-offset-1'));
+        btn.classList.add('ring-2','ring-black','ring-offset-1');
+      });
+    });
+  });
+}
+
+let currentSlug = null;
+
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const slug = document.getElementById('slug').value.trim().toLowerCase();
+  const password = document.getElementById('password').value;
+  const errBox = document.getElementById('login-error');
+  const btn = document.getElementById('login-btn');
+  errBox.classList.add('hidden');
+  btn.disabled = true; btn.textContent = 'Decrypting…';
+
+  try {
+    const url = `../data/leads/${slug}.enc.json`;
+    const resp = await fetch(url, { cache: 'no-cache' });
+    if (!resp.ok) throw new Error('No leads found for that slug');
+    const encrypted = await resp.json();
+    const payload = await decryptPayload(encrypted, password);
+    currentSlug = slug;
+    sessionStorage.setItem('portal-slug', slug);
+    // Show dashboard
+    document.getElementById('login-view').classList.add('hidden');
+    document.getElementById('dashboard-view').classList.remove('hidden');
+    renderLeads(payload);
+  } catch (err) {
+    console.error(err);
+    errBox.textContent = 'Wrong slug or password — or no leads available yet. Try again.';
+    errBox.classList.remove('hidden');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Log in';
+  }
+});
+
+document.getElementById('logout-btn').addEventListener('click', () => {
+  currentSlug = null;
+  sessionStorage.removeItem('portal-slug');
+  document.getElementById('dashboard-view').classList.add('hidden');
+  document.getElementById('login-view').classList.remove('hidden');
+  document.getElementById('password').value = '';
+});
+
+// Pre-fill slug from URL param: portal/?agent=jane-doe
+const urlSlug = new URLSearchParams(location.search).get('agent');
+if (urlSlug) document.getElementById('slug').value = urlSlug;
+</script>
+
+</body>
+</html>

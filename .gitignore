@@ -1,6 +1,6 @@
-# NEVER commit proprietary lead data (owner names + agent lead pipeline)
-data/leads/
+# NEVER commit raw lead data (owner names + pipeline). Encrypted versions are OK.
 data/leads/*.json
+!data/leads/*.enc.json
 
 # Backup/original asset versions
 images/*-original.png
