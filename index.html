@@ -1,45 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contractor License Services</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEA GC Realty — South Florida Real Estate Brokerage</title>
+<meta name="description" content="SEA GC Realty — Boca Raton-based real estate brokerage serving Palm Beach and Broward Counties. Buyers, sellers, investors, and agents.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="images/sea-gc-logo.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream:  { 50: '#fbf8f3', 100: '#f5efe3', 200: '#ece2cd' },
+        tan:    { 300: '#d4b896', 400: '#c4a574', 500: '#a88554', 600: '#8a6a3f' },
+        gold:   { 400: '#d4a017', 500: '#b8860b', 600: '#8c660a' },
+        brown:  { 700: '#4a3b2a', 800: '#332817' },
+        wine:   { 500: '#8b2622', 600: '#6b1d1a', 700: '#4d1412' },
+        silver: { 100: '#e8e6e3', 300: '#c0c0c0', 500: '#888' }
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body:    ['Inter', '-apple-system', 'system-ui', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: 'Inter', -apple-system, system-ui, sans-serif; }
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+</style>
 </head>
-<body>
-    <header>
-        <img src="images/sea-gc-logo.png" alt="SEA GC LLC Logo" id="logo">
-        <h1>Welcome to SEA GC LLC</h1>
-        <p>Sustainable Development.</p>
-    </header>
+<body class="bg-cream-50 text-black antialiased">
 
-    <nav>
-        <a href="services.html">Services</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- Nav -->
+<nav class="bg-cream-50/90 backdrop-blur border-b border-tan-400/40 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/sea-gc-logo.png?v=3" alt="SEA GC Realty" class="h-10 w-auto">
+      <span class="font-display text-2xl font-semibold tracking-tight">SEA GC Realty</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+      <a href="services.html" class="hover:text-wine-600 transition">Services</a>
+      <a href="about.html" class="hover:text-wine-600 transition">About</a>
+      <a href="how-we-close.html" class="hover:text-wine-600 transition">How We Close</a>
+      <a href="contact.html" class="bg-wine-500 text-cream-50 px-5 py-2 hover:bg-wine-600 transition">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>Explore our wide range of contractor services designed to help you operate legally and effectively.</p>
-    </section>
+<!-- Hero -->
+<section class="relative overflow-hidden bg-cream-50">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-xs uppercase tracking-[0.3em] text-tan-600 mb-6">South Florida real estate</p>
+      <h1 class="font-display text-5xl md:text-7xl font-semibold leading-[1.05] tracking-tight">
+        Brokerage,<br><span class="italic text-wine-500">done right.</span>
+      </h1>
+      <p class="mt-8 text-lg md:text-xl text-brown-700 max-w-xl font-light leading-relaxed">
+        A boutique brokerage built around real leads, real service, and real results &mdash; for buyers, sellers, investors, and the agents who serve them.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="contact.html" class="bg-wine-500 hover:bg-wine-600 text-cream-50 font-medium px-8 py-4 transition uppercase tracking-wider text-sm">
+          Get in touch
+        </a>
+        <a href="services.html" class="border border-black text-black font-medium px-8 py-4 hover:bg-black hover:text-cream-50 transition uppercase tracking-wider text-sm">
+          See what we do
+        </a>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <img src="images/sea-gc-logo.png?v=3" alt="" class="w-full max-w-md">
+    </div>
+  </div>
+  <div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-tan-300 via-gold-400 to-tan-300"></div>
+</section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are dedicated to providing the best licensing solutions for contractors, builders, and developers.</p>
-    </section>
+<!-- Value props -->
+<section class="bg-brown-800 text-cream-50">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-3 gap-12">
+      <div class="border-t-2 border-gold-400 pt-8">
+        <div class="font-display text-3xl mb-4 text-gold-400">For buyers &amp; sellers</div>
+        <p class="text-cream-100/85 leading-relaxed">From your first showing through closing, you work directly with a licensed broker, not a junior agent juggling fifty deals. Honest pricing analysis, hard negotiation, and a closing process that doesn't fall apart at the title company.</p>
+      </div>
+      <div class="border-t-2 border-gold-400 pt-8">
+        <div class="font-display text-3xl mb-4 text-gold-400">For investors</div>
+        <p class="text-cream-100/85 leading-relaxed">Off-market access. The broker is an active foreclosure and BRRRR investor in PBC and Broward &mdash; the deals our agents see first are the ones we'd buy ourselves. Cash flow, cap rates, and exit math, not just "comps."</p>
+      </div>
+      <div class="border-t-2 border-gold-400 pt-8">
+        <div class="font-display text-3xl mb-4 text-gold-400">For agents</div>
+        <p class="text-cream-100/85 leading-relaxed">A boutique brokerage built for license-hangers, part-timers, and serious producers. We share splits, fees, and lead-pipeline details privately with serious candidates.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email us at invest@bshoshan.com or call us at (561) 453-0431.</p>
-    </section>
+<!-- Map -->
+<section class="bg-cream-100 border-y border-tan-400/40">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="flex items-end justify-between mb-6 flex-wrap gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-widest text-tan-600 mb-2">Currently on the market</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight">PBC + Broward listings.</h2>
+      </div>
+      <div class="text-sm text-brown-700 font-light">
+        <span id="map-count">&hellip;</span> active listings &middot; <span class="italic">tap any pin for details</span>
+      </div>
+    </div>
+    <div id="map" class="w-full h-[520px] border border-tan-400/40 shadow-sm"></div>
+    <p class="mt-4 text-xs text-tan-600 uppercase tracking-widest">Data via BeachesMLS &middot; Refreshed nightly &middot; Not all listings shown</p>
+  </div>
+</section>
 
-    <footer>
-        <p>Contact us at info@bshoshan.com</p>
-    </footer>
-</body>
-</html>
-        <p>Contact us at info@bshoshan.com</p>
-    </footer>
+<!-- Leaflet + CARTO tiles + custom-styled markers + cluster -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<style>
+  .leaflet-container { background: #f5efe3; font-family: 'Inter', sans-serif; }
+  .leaflet-popup-content-wrapper {
+    background: #fbf8f3; color: #332817; border: 1px solid #c4a574;
+    border-radius: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .leaflet-popup-tip { background: #fbf8f3; border: 1px solid #c4a574; }
+  .leaflet-popup-content { margin: 14px 16px; font-size: 12px; line-height: 1.5; }
+  .leaflet-popup-content .price { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: #8b2622; }
+  .leaflet-popup-content .addr { font-weight: 500; margin-top: 2px; color: #000; }
+  .leaflet-popup-content .meta { color: #4a3b2a; margin-top: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .leaflet-popup-content .mls { color: #8a6a3f; font-size: 10px; margin-top: 8px; }
+  .seagc-pin {
+    background: #8b2622; color: #fbf8f3;
+    border-radius: 50% 50% 50% 0; transform: rotate(-45deg);
+    width: 26px; height: 26px; display: block;
+    border: 2px solid #fbf8f3; box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .seagc-pin::after {
+    content: ''; width: 8px; height: 8px; background: #fbf8f3; border-radius: 50%;
+    position: absolute; top: 7px; left: 7px;
+  }
+  .marker-cluster, .marker-cluster div {
+    background: rgba(139, 38, 34, 0.9) !important;
+    border-radius: 50% !important;
+    color: #fbf8f3 !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-weight: 700 !important;
+    border: 2px solid #fbf8f3 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .marker-cluster div { border: none !important; box-shadow: none; }
+  .marker-cluster span { line-height: 1; }
+  .leaflet-control-attribution {
+    background: rgba(251, 248, 243, 0.85) !important;
+    color: #4a3b2a !important;
+    font-size: 10px !important;
+    border-left: 1px solid #c4a574;
+    border-top: 1px solid #c4a574;
+  }
+  .leaflet-control-attribution a { color: #000 !important; text-decoration: none; }
+  .leaflet-control-attribution a:hover { color: #8b2622 !important; }
+</style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(function() {
+  const map = L.map('map', {
+    zoomControl: true,
+    scrollWheelZoom: false,
+    attributionControl: false  // we add our own without the Leaflet flag prefix
+  }).setView([26.45, -80.10], 10);
+
+  L.control.attribution({ prefix: false }).addTo(map);  // no Leaflet flag
+
+  // CARTO Positron — light/minimal, matches the boutique aesthetic
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: 'Map &copy; OpenStreetMap, tiles by CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19,
+  }).addTo(map);
+
+  const cluster = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    maxClusterRadius: 50,
+  });
+
+  const fmt = n => '$' + Number(n || 0).toLocaleString();
+
+  fetch('data/active-listings.json')
+    .then(r => r.json())
+    .then(geo => {
+      const seagcIcon = L.divIcon({
+        className: 'seagc-icon-wrapper',
+        html: '<span class="seagc-pin"></span>',
+        iconSize: [26, 26],
+        iconAnchor: [13, 26],
+        popupAnchor: [0, -22],
+      });
+
+      geo.features.forEach(f => {
+        const p = f.properties;
+        const [lon, lat] = f.geometry.coordinates;
+        const marker = L.marker([lat, lon], { icon: seagcIcon });
+        const popup = `
+          <div class="price">${fmt(p.price)}</div>
+          <div class="addr">${p.addr}</div>
+          <div class="meta">
+            ${p.beds || '—'} BD &middot; ${p.baths || '—'} BA &middot; ${p.sqft ? Number(p.sqft).toLocaleString() + ' sqft' : '—'}
+            <br>${p.type || ''} ${p.yr ? '&middot; built ' + p.yr : ''}
+          </div>
+          <div class="mls">MLS# ${p.mls} &middot; DOM ${p.dom}</div>
+          <a href="contact.html?topic=buyer&mls=${p.mls}" style="display:inline-block;margin-top:10px;background:#8b2622;color:#fbf8f3;padding:6px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;">Inquire &rarr;</a>
+        `;
+        marker.bindPopup(popup);
+        cluster.addLayer(marker);
+      });
+
+      map.addLayer(cluster);
+      document.getElementById('map-count').textContent = geo.count.toLocaleString();
+    })
+    .catch(err => {
+      console.error('Failed to load listings:', err);
+      document.getElementById('map-count').textContent = '—';
+    });
+})();
+</script>
+
+<!-- Stats / proof -->
+<section class="bg-cream-50 border-y border-tan-400/40">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-8 text-center">
+    <div>
+      <div class="font-display text-4xl md:text-5xl font-semibold text-brown-800">PBC + Broward</div>
+      <div class="text-tan-600 mt-2 uppercase tracking-widest text-xs">Primary service area</div>
+    </div>
+    <div class="md:border-x border-tan-400/40">
+      <div class="font-display text-4xl md:text-5xl font-semibold text-brown-800">BeachesMLS</div>
+      <div class="text-tan-600 mt-2 uppercase tracking-widest text-xs">Full participant access</div>
+    </div>
+    <div>
+      <div class="font-display text-4xl md:text-5xl font-semibold text-brown-800">Broker-owned</div>
+      <div class="text-tan-600 mt-2 uppercase tracking-widest text-xs">No corporate layers</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-cream-50">
+  <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <h2 class="font-display text-4xl md:text-6xl font-semibold tracking-tight">Ready to talk?</h2>
+    <p class="mt-6 text-lg text-brown-700 font-light">Free, no-pressure consultation. Buyers, sellers, investors, or licensed agents thinking about their next move.</p>
+    <a href="contact.html" class="mt-10 inline-block bg-wine-500 hover:bg-wine-600 text-cream-50 font-medium px-10 py-4 transition uppercase tracking-wider text-sm">Start the conversation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-cream-100/70">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10 text-sm">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/sea-gc-logo.png?v=3" alt="" class="h-8 w-auto invert">
+        <span class="font-display text-xl text-cream-50">SEA GC Realty</span>
+      </div>
+      <p class="text-xs leading-relaxed">SEA GC LLC<br>1532 SE 9th St<br>Deerfield Beach, FL 33441<br>(561) 552-2771</p>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Services</div>
+      <ul class="space-y-2">
+        <li><a href="services.html" class="hover:text-cream-50">For Buyers</a></li>
+        <li><a href="services.html" class="hover:text-cream-50">For Sellers</a></li>
+        <li><a href="services.html" class="hover:text-cream-50">For Investors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Company</div>
+      <ul class="space-y-2">
+        <li><a href="about.html" class="hover:text-cream-50">About</a></li>
+        <li><a href="contact.html" class="hover:text-cream-50">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Legal &amp; Compliance</div>
+      <ul class="space-y-2 text-xs">
+        <li><a href="wire-fraud-warning.html" class="hover:text-cream-50 underline">Wire Fraud Warning</a></li>
+        <li>Broker of Record: Ben Shoshan</li>
+        <li>Broker BK3471395</li>
+        <li>Brokerage CQ1074963</li>
+        <li>Equal Housing Opportunity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-cream-100/10 text-center text-xs py-4 text-silver-300">&copy; 2026 SEA GC LLC. All rights reserved.</div>
+</footer>
+
 </body>
 </html>

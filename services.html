@@ -1,43 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Secure Checkout</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS file -->
-    <style>
-        .checkout-button {
-            display: inline-block;
-            background-color: #4CAF50; /* Green background for visibility */
-            color: white; /* White text color */
-            padding: 15px 32px; /* Padding around the text */
-            text-align: center; /* Center the text inside the button */
-            text-decoration: none; /* Remove underline from the link */
-            font-size: 16px; /* Set font size */
-            cursor: pointer; /* Change mouse cursor to pointer */
-            border-radius: 5px; /* Rounded corners for the button */
-            border: none; /* No border */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
-        }
-
-        .checkout-button:hover {
-            background-color: #45a049; /* Darker shade of green on hover */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — SEA GC Realty</title>
+<meta name="description" content="SEA GC Realty services for buyers, sellers, and investors in Palm Beach and Broward County.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="images/sea-gc-logo.png?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  cream: { 50:'#fbf8f3', 100:'#f5efe3', 200:'#ece2cd' },
+  tan: { 300:'#d4b896', 400:'#c4a574', 500:'#a88554', 600:'#8a6a3f' },
+  gold: { 400:'#d4a017', 500:'#b8860b', 600:'#8c660a' },
+  brown: { 700:'#4a3b2a', 800:'#332817' },
+  wine: { 500:'#8b2622', 600:'#6b1d1a', 700:'#4d1412' },
+  silver: { 100:'#e8e6e3', 300:'#c0c0c0', 500:'#888' }
+}}}}
+</script>
+<style> body { font-family: 'Inter', sans-serif; } .font-display { font-family: 'Cormorant Garamond', Georgia, serif; } </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to SEA GC LLC </h1>
-        <p>Click below to securely complete your purchase.</p>
-    </header>
+<body class="bg-cream-50 text-black antialiased">
 
-    <main>
-        <a href="https://buy.stripe.com/28o5kAdoCgeR4iA6oo" target="_blank" class="checkout-button">Proceed to Checkout</a>
-    </main>
+<nav class="bg-cream-50/90 backdrop-blur border-b border-tan-400/40 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/sea-gc-logo.png?v=3" alt="SEA GC Realty" class="h-10 w-auto">
+      <span class="font-display text-2xl font-semibold tracking-tight">SEA GC Realty</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+      <a href="services.html" class="text-wine-600 underline-offset-4 underline">Services</a>
+      <a href="about.html" class="hover:text-wine-600 transition">About</a>
+      <a href="how-we-close.html" class="hover:text-wine-600 transition">How We Close</a>
+      <a href="contact.html" class="bg-wine-500 text-cream-50 px-5 py-2 hover:bg-wine-600 transition">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <footer>
-        <p>Contact us at info@bshoshan.com</p>
-    </footer>
+<!-- Page header -->
+<section class="max-w-6xl mx-auto px-6 py-20 text-center">
+  <p class="text-xs uppercase tracking-[0.3em] text-tan-600 mb-4">What we do</p>
+  <h1 class="font-display text-5xl md:text-6xl font-semibold tracking-tight">Services</h1>
+  <p class="mt-6 max-w-2xl mx-auto text-lg text-brown-700 font-light leading-relaxed">Three audiences. One brokerage. Whether you are buying your first home, selling a long-held investment, or building a rental portfolio, the service is the same: direct broker access and zero corporate filler.</p>
+</section>
+
+<!-- Buyers -->
+<section class="bg-cream-100 border-y border-tan-400/40">
+  <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-xs uppercase tracking-widest text-gold-500 mb-3">01 &mdash; Buyers</p>
+      <h2 class="font-display text-4xl font-semibold tracking-tight">A home, not a transaction.</h2>
+      <p class="mt-6 text-brown-700 leading-relaxed">We start with what you actually need &mdash; budget, neighborhood, school district, commute, square footage, the negotiables &mdash; before we ever pull listings. Then we work the MLS, off-market network, and the broker's own foreclosure pipeline to find homes that fit, not homes that pop up on Zillow.</p>
+      <ul class="mt-6 space-y-2 text-brown-700">
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Buyer representation under signed agreement (per current NAR rules)</li>
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Pricing analysis on every offer, not just "it's a fair price"</li>
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Closing coordination through a vetted title company &mdash; no wire instructions sent by email</li>
+      </ul>
+    </div>
+    <div class="bg-white border border-tan-400/40 p-8">
+      <div class="font-display text-2xl mb-2">What you pay</div>
+      <p class="text-brown-700 text-sm">Buyer compensation is documented up front, in writing, in your buyer brokerage agreement. No hidden fees, no surprise charges at closing. If the listing pays buy-side compensation we will tell you; if it does not, we will tell you that too.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sellers -->
+<section class="bg-cream-50">
+  <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div class="md:order-2">
+      <p class="text-xs uppercase tracking-widest text-gold-500 mb-3">02 &mdash; Sellers</p>
+      <h2 class="font-display text-4xl font-semibold tracking-tight">Sell at the right price. The first time.</h2>
+      <p class="mt-6 text-brown-700 leading-relaxed">An overpriced listing sits, an underpriced listing gets multiple offers and then closes at the right number, and the only way to know which is which is to do the comp work honestly. We pull the actual comparable closings, account for the things Zillow misses (flood, HOA assessments, age of roof and AC), and tell you the truth even if you do not want to hear it.</p>
+      <ul class="mt-6 space-y-2 text-brown-700">
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Honest CMA, presented in plain English</li>
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Professional photography and BeachesMLS exposure on every listing</li>
+        <li class="flex gap-3"><span class="text-wine-500">&#9670;</span> Daily watchlist tracking on showings, price drops, and offer activity</li>
+      </ul>
+    </div>
+    <div class="bg-brown-800 text-cream-50 p-8 md:order-1">
+      <div class="font-display text-2xl mb-2 text-gold-400">Listing commission</div>
+      <p class="text-cream-100/85 text-sm">Negotiable, transparent, and disclosed up front. We will quote you a fair number and explain exactly what it covers &mdash; marketing, MLS, showings, negotiation, transaction coordination. You do not get a discount on someone else's work; you get straight numbers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Investors -->
+<section class="bg-brown-800 text-cream-50">
+  <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-xs uppercase tracking-widest text-gold-400 mb-3">03 &mdash; Investors</p>
+      <h2 class="font-display text-4xl font-semibold tracking-tight text-cream-50">Where the broker actually buys.</h2>
+      <p class="mt-6 text-cream-100/85 leading-relaxed">The broker is an active foreclosure and BRRRR investor in Palm Beach and Broward Counties. We work the full distressed property market in PBC and Broward, including off-market and pre-foreclosure opportunities, with disclosed broker representation under FL law.</p>
+      <ul class="mt-6 space-y-2 text-cream-100/85">
+        <li class="flex gap-3"><span class="text-gold-400">&#9670;</span> Foreclosure-pipeline access (PBC + Broward)</li>
+        <li class="flex gap-3"><span class="text-gold-400">&#9670;</span> Targeted distressed-property sourcing</li>
+        <li class="flex gap-3"><span class="text-gold-400">&#9670;</span> Real cap rate, cash flow, and PITI math on every offer &mdash; not "comp-based estimates"</li>
+        <li class="flex gap-3"><span class="text-gold-400">&#9670;</span> 1031 exchange, property management referrals, lender introductions</li>
+      </ul>
+    </div>
+    <div class="border border-gold-400 p-8">
+      <div class="font-display text-2xl mb-2 text-gold-400">Investor terms</div>
+      <p class="text-cream-100/85 text-sm">For active investor clients (typically two-plus acquisitions per year), we offer fee structures aligned with the realities of distressed and off-market deals &mdash; flat-fee buy-side representation, wholesale-style assignment coordination, or full-service brokerage. Talk to us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-cream-50">
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight">Let us help.</h2>
+    <p class="mt-6 text-lg text-brown-700 font-light">Tell us what you are trying to do and we will tell you whether we are the right brokerage for it. No hard sell.</p>
+    <a href="contact.html" class="mt-10 inline-block bg-wine-500 hover:bg-wine-600 text-cream-50 font-medium px-10 py-4 transition uppercase tracking-wider text-sm">Get in touch</a>
+  </div>
+</section>
+
+<footer class="bg-black text-cream-100/70">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10 text-sm">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/sea-gc-logo.png?v=3" alt="" class="h-8 w-auto invert">
+        <span class="font-display text-xl text-cream-50">SEA GC Realty</span>
+      </div>
+      <p class="text-xs leading-relaxed">SEA GC LLC<br>1532 SE 9th St<br>Deerfield Beach, FL 33441<br>(561) 552-2771</p>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Services</div>
+      <ul class="space-y-2">
+        <li><a href="services.html" class="hover:text-cream-50">For Buyers</a></li>
+        <li><a href="services.html" class="hover:text-cream-50">For Sellers</a></li>
+        <li><a href="services.html" class="hover:text-cream-50">For Investors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Company</div>
+      <ul class="space-y-2">
+        <li><a href="about.html" class="hover:text-cream-50">About</a></li>
+        <li><a href="contact.html" class="hover:text-cream-50">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Legal &amp; Compliance</div>
+      <ul class="space-y-2 text-xs">
+        <li><a href="wire-fraud-warning.html" class="hover:text-cream-50 underline">Wire Fraud Warning</a></li>
+        <li>Broker of Record: Ben Shoshan</li>
+        <li>Broker BK3471395</li>
+        <li>Brokerage CQ1074963</li>
+        <li>Equal Housing Opportunity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-cream-100/10 text-center text-xs py-4 text-silver-300">&copy; 2026 SEA GC LLC. All rights reserved.</div>
+</footer>
+
 </body>
 </html>
-

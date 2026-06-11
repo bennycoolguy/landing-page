@@ -1,0 +1,13 @@
+# NEVER commit proprietary lead data (owner names + agent lead pipeline)
+data/leads/
+data/leads/*.json
+
+# Backup/original asset versions
+images/*-original.png
+
+# macOS
+.DS_Store
+Icon?
+
+# Server logs
+*.log
