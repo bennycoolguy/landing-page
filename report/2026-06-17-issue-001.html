@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue #001 &middot; June 17, 2026 &mdash; The South Florida Real Estate Report</title>
+<meta name="description" content="Pre-foreclosure activity, expired distressed flow, cap rate snapshots from Fort Lauderdale, Riviera Beach, and Delray. Palm Beach + Broward, week of June 17, 2026.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="../images/sea-gc-logo.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  gold: { 400:'#d4a017', 500:'#b8860b', 600:'#8c660a' },
+  silver: { 300:'#c0c0c0', 500:'#888' }
+}}}}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .btn-shiny { background: linear-gradient(135deg, #2a2a2a 0%, #000 50%, #2a2a2a 100%); position: relative; overflow: hidden; }
+  .btn-shiny::after { content: ''; position: absolute; top: -50%; left: -75%; width: 50%; height: 200%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.13), transparent); transform: skewX(-25deg); transition: left 0.6s ease; }
+  .btn-shiny:hover::after { left: 125%; }
+  .btn-gold-shiny { background: linear-gradient(135deg, #b8860b 0%, #f4d76e 25%, #d4af37 50%, #b8860b 75%, #8c660a 100%); color: #1a1410; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(184,134,11,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
+  .btn-gold-shiny::after { content: ''; position: absolute; top: -50%; left: -75%; width: 50%; height: 200%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); transform: skewX(-25deg); transition: left 0.6s ease; }
+  .btn-gold-shiny:hover::after { left: 125%; }
+  .prose-report p { color: #374151; line-height: 1.75; margin-top: 1.25rem; font-size: 1.05rem; }
+  .prose-report p strong { color: #111827; font-weight: 600; }
+  .prose-report h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; margin-top: 3rem; margin-bottom: 0.75rem; color: #111827; }
+  .prose-report table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.95rem; }
+  .prose-report th { background: #f9fafb; color: #6b7280; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; text-align: left; padding: 0.75rem 0.875rem; border-bottom: 1px solid #e5e7eb; }
+  .prose-report td { padding: 0.875rem; border-bottom: 1px solid #f3f4f6; color: #374151; vertical-align: top; }
+  .prose-report td strong { color: #b8860b; }
+</style>
+</head>
+<body class="bg-white text-black antialiased">
+
+<nav class="bg-white/90 backdrop-blur border-b border-black/10 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../images/sea-gc-logo.png?v=4" alt="SEA GC Realty" class="h-9 md:h-10 w-auto">
+      <span class="font-display text-xl md:text-2xl font-semibold tracking-tight">SEA GC Realty</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+      <a href="../services.html" class="hover:text-gold-500 transition">Services</a>
+      <a href="../investors.html" class="hover:text-gold-500 transition">Investors</a>
+      <a href="../about.html" class="hover:text-gold-500 transition">About</a>
+      <a href="../how-we-close.html" class="hover:text-gold-500 transition">How We Close</a>
+      <a href="https://portal.bshoshan.com/login" title="Portal Login" class="hover:text-gold-500 transition flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+      </a>
+      <a href="../contact.html" class="btn-shiny text-white px-5 py-2 transition">Contact</a>
+    </div>
+    <button id="navToggle" aria-label="Open menu" class="md:hidden p-2 -mr-2 text-black focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-black/10 bg-white text-sm uppercase tracking-wider">
+      <a href="../services.html" class="block py-3 px-6 text-black hover:bg-gray-50">Services</a>
+      <a href="../investors.html" class="block py-3 px-6 text-black hover:bg-gray-50">Investors</a>
+      <a href="../about.html" class="block py-3 px-6 text-black hover:bg-gray-50">About</a>
+      <a href="../how-we-close.html" class="block py-3 px-6 text-black hover:bg-gray-50">How We Close</a>
+      <a href="../contact.html" class="block py-3 px-6 bg-gray-100 text-black hover:bg-black hover:text-white">Contact</a>
+  </div>
+</nav>
+<script>
+  (function(){
+    var btn = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (btn && menu) btn.addEventListener('click', function(){ menu.classList.toggle('hidden'); });
+  })();
+</script>
+
+<!-- Breadcrumb -->
+<div class="max-w-3xl mx-auto px-6 pt-8 text-xs uppercase tracking-widest text-gray-500">
+  <a href="../index.html" class="hover:text-gold-500">Home</a>
+  <span class="mx-2">/</span>
+  <a href="index.html" class="hover:text-gold-500">Report archive</a>
+  <span class="mx-2">/</span>
+  <span class="text-gray-700">Issue #001</span>
+</div>
+
+<!-- Header -->
+<article class="max-w-3xl mx-auto px-6 pt-8 pb-12">
+  <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-4">Issue #001 &middot; Wednesday, June 17, 2026</p>
+  <h1 class="font-display text-4xl md:text-5xl font-semibold tracking-tight leading-tight">The South Florida<br><span class="italic text-gold-500">Real Estate Report.</span></h1>
+  <p class="mt-6 text-sm text-gray-500 italic">Palm Beach + Broward &middot; Ben Shoshan, SEA GC Realty</p>
+
+  <div class="mt-12 prose-report">
+
+    <h2>What I&rsquo;m watching this week</h2>
+    <p>The disconnect that keeps showing up in the pull this week: brand-new listings priced for cash flow are sitting right next to 200-day-old listings priced for a 2022 market. In the same zip code. The owners who refuse to mark to market are giving the disciplined buyers cover &mdash; every overpriced stale listing makes the well-priced one look like a steal by comparison. If you&rsquo;re buying, that&rsquo;s exactly the spread you want to be inside of.</p>
+
+    <h2>Pre-foreclosure activity</h2>
+    <p>Nine new properties came off the PBC and Broward foreclosure calendars in this week&rsquo;s scout pull &mdash; five Palm Beach, four Broward. Two of them are what I&rsquo;d call genuinely equity-rich situations: a 4BR SFR in 33415 (West Palm) with roughly <strong>$180k of equity over the judgment</strong>, and a Broward townhouse in the 33325 area showing essentially full equity (the recorded judgment on that one is zero, which usually points to a non-mortgage foreclosure &mdash; tax, code, or HOA &mdash; and those are a different animal worth handling carefully).</p>
+    <p>These come out of the proprietary pipeline I run weekly against both county dockets and cross-reference against the property appraiser. Auction windows on this batch range from <strong>66 to 108 days</strong> for the PBC properties, and immediate for the Broward filings. If you want me to walk through any of these one-on-one &mdash; I&rsquo;m doing direct, license-disclosed outreach to all of them this week &mdash; let me know.</p>
+
+    <h2>Expired &amp; distressed deal flow</h2>
+    <p><strong>22 expired SFR listings</strong> hit the enriched pipeline this week with confirmed owner phone numbers. The pattern is bimodal: an entry-to-mid-tier cluster ($275k&ndash;$400k) across Pompano, Lake Worth, Margate, North Lauderdale, Delray, and West Palm &mdash; and a luxury cluster ($639k&ndash;$2.2M) concentrated in Parkland and Coral Springs. Average days on market in the lower tier is over <strong>230 days</strong> &mdash; these are owners who already tried the market and it didn&rsquo;t work. Those are the conversations worth having.</p>
+
+    <h2>Cap rate snapshot &mdash; three properties that pencil</h2>
+    <p>Numbers below use the <strong>50% expense rule</strong> (NOI = 50% of gross rent), zip-level rent estimates, and PITI at current conventional rates with 5% down. Not a substitute for the deal-specific underwriting I&rsquo;d run with you before an offer.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Where</th>
+          <th>Beds</th>
+          <th>List</th>
+          <th>Est. Rent</th>
+          <th>Pro-Forma Cap</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fort Lauderdale, 33311</td>
+          <td>3BR / 2BA</td>
+          <td>$195,000</td>
+          <td>~$2,317/mo</td>
+          <td><strong>~7.1%</strong></td>
+          <td>Fresh &mdash; DOM 1. East-Broward rental zip.</td>
+        </tr>
+        <tr>
+          <td>Riviera Beach, 33404</td>
+          <td>4BR / 1BA</td>
+          <td>$190,000</td>
+          <td>~$2,400/mo</td>
+          <td><strong>~7.6%</strong></td>
+          <td>160 DOM. The seller knows the market told them no.</td>
+        </tr>
+        <tr>
+          <td>Delray Beach, 33444</td>
+          <td>3BR / 2BA</td>
+          <td>$300,000</td>
+          <td>~$2,839/mo</td>
+          <td><strong>~5.7%</strong></td>
+          <td>DOM 2. Lower cap, but Delray rental velocity is real.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The Fort Lauderdale and Riviera plays cash flow on paper with 5% down &mdash; uncommon at this price point. The Delray comp is a thinner cap but in a sub-market where vacancy is essentially zero and appreciation has carried the deal historically. Different strategies. Both defensible.</p>
+
+    <h2>What the broader market looks like right now</h2>
+    <p>The MLS pool I scored this week (214 SFRs across PBC + Broward in the $50k&ndash;$800k band) is sitting at a <strong>mean 103 days on market</strong>, with about <strong>17% of listings over 180 days</strong>. That&rsquo;s a market where price discovery is happening through time, not through bidding &mdash; exactly the inverse of 2021. Buyers who treat every listing as negotiable and lead with PITI-based offers rather than asking-price-based offers are getting deals their friends say &ldquo;don&rsquo;t exist.&rdquo;</p>
+    <p>I&rsquo;m not going to make a call on where rates go next &mdash; too many people in this business pretend they know. What I can say: every week another batch of sellers who bought or refinanced into a different rate environment finally accepts the math, and that&rsquo;s where the inventory is coming from. If you&rsquo;re a buyer or an investor sitting on capital waiting for &ldquo;the bottom,&rdquo; you&rsquo;re going to miss the part where the deal got done because someone else stopped waiting.</p>
+
+    <h2>Want to talk through any of this?</h2>
+    <p>Reply to this email, or grab a slot on my calendar. Investor strategy, a specific property, a foreclosure situation you&rsquo;re working through, or just an honest read on what your house would do in this market &mdash; all fair game.</p>
+    <p>&mdash; <strong>Ben Shoshan</strong></p>
+
+  </div>
+
+  <div class="mt-12 flex flex-wrap gap-4">
+    <a href="../contact.html?topic=investor" class="btn-shiny text-white font-medium px-8 py-4 transition uppercase tracking-wider text-sm rounded-lg">Reply / start a conversation</a>
+    <a href="index.html" class="border border-black text-black font-medium px-8 py-4 hover:bg-black hover:text-white transition uppercase tracking-wider text-sm rounded-lg">&larr; All issues</a>
+  </div>
+</article>
+
+<!-- Subscribe -->
+<section class="bg-gray-50 border-y border-black/10">
+  <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-4">Don&rsquo;t miss the next one</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold tracking-tight">Subscribe to the Report.</h2>
+    <p class="mt-6 text-gray-700 font-light leading-relaxed">Every Wednesday. Pre-foreclosure activity, cap rate snapshots, and a plain read on what the PBC + Broward market is doing.</p>
+    <form action="https://formspree.io/f/mayrawgr" method="POST" class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" name="email" required placeholder="your@email.com"
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-black transition text-sm bg-white">
+      <input type="hidden" name="_subject" value="NEWSLETTER signup - bshoshan.com">
+      <input type="hidden" name="source" value="report-issue-001">
+      <input type="hidden" name="_next" value="https://bshoshan.com/subscribed.html">
+      <button type="submit" class="btn-gold-shiny font-semibold px-8 py-3 transition uppercase tracking-wider text-sm rounded-lg whitespace-nowrap">
+        Subscribe
+      </button>
+    </form>
+    <p class="mt-4 text-xs text-gray-500">Unsubscribe any time. We don&rsquo;t sell lists.</p>
+  </div>
+</section>
+
+<!-- Disclosure footer -->
+<section class="bg-white border-b border-black/10">
+  <div class="max-w-3xl mx-auto px-6 py-12 text-center text-xs text-gray-500 leading-relaxed">
+    <p class="font-medium text-gray-700">Ben Shoshan, Licensed Florida Broker, BK3471395</p>
+    <p>SEA GC Realty (Brokerage CQ1074963) &mdash; SEA GC LLC</p>
+    <p>1532 SE 9th St, Deerfield Beach, FL 33441 &middot; (561) 552-2771</p>
+    <p>bshoshan.com &middot; Equal Housing Opportunity</p>
+    <p class="mt-6 italic max-w-2xl mx-auto">This newsletter contains general market commentary and proprietary pipeline observations. Property analyses use estimates and pro-forma assumptions; deal-specific underwriting required before any offer. Not investment, tax, or legal advice. Past pipeline performance is not indicative of future deal flow.</p>
+  </div>
+</section>
+
+<footer class="bg-black text-white/70">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10 text-sm">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="../images/sea-gc-logo.png?v=4" alt="" class="h-8 w-auto invert">
+        <span class="font-display text-xl text-white">SEA GC Realty</span>
+      </div>
+      <p class="text-xs leading-relaxed">SEA GC LLC<br>1532 SE 9th St<br>Deerfield Beach, FL 33441<br>(561) 552-2771</p>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Services</div>
+      <ul class="space-y-2">
+        <li><a href="../services.html" class="hover:text-white">For Buyers</a></li>
+        <li><a href="../services.html" class="hover:text-white">For Sellers</a></li>
+        <li><a href="../investors.html" class="hover:text-white">For Investors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Company</div>
+      <ul class="space-y-2">
+        <li><a href="../about.html" class="hover:text-white">About</a></li>
+        <li><a href="https://portal.bshoshan.com/apply" class="hover:text-white">Apply for portal access</a></li>
+        <li><a href="../contact.html" class="hover:text-white">Contact</a></li>
+        <li><a href="https://portal.bshoshan.com/login" class="hover:text-white">Agent Login</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Legal &amp; Compliance</div>
+      <ul class="space-y-2 text-xs">
+        <li><a href="../wire-fraud-warning.html" class="hover:text-white underline">Wire Fraud Warning</a></li>
+        <li>Broker of Record: Ben Shoshan</li>
+        <li>Broker BK3471395</li>
+        <li>Brokerage CQ1074963</li>
+        <li>Equal Housing Opportunity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 text-center text-xs py-4 text-gray-400">&copy; 2026 SEA GC LLC. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
