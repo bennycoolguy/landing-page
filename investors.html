@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investor Services — SEA GC Realty</title>
+<meta name="description" content="SEA GC Realty sources pre-foreclosure, expired distressed, and off-market flip candidates in Palm Beach and Broward Counties — with deal math, not just listings.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="images/sea-gc-logo.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  cream: { 50:'#fbf8f3', 100:'#f5efe3', 200:'#ece2cd' },
+  tan:   { 300:'#d4b896', 400:'#c4a574', 500:'#a88554', 600:'#8a6a3f' },
+  gold:  { 400:'#d4a017', 500:'#b8860b', 600:'#8c660a' },
+  brown: { 700:'#4a3b2a', 800:'#332817' },
+  wine:  { 500:'#8b2622', 600:'#6b1d1a', 700:'#4d1412' },
+  silver:{ 100:'#e8e6e3', 300:'#c0c0c0', 500:'#888' }
+}}}}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .btn-gold-shiny { background: linear-gradient(135deg, #b8860b 0%, #f4d76e 25%, #d4af37 50%, #b8860b 75%, #8c660a 100%); color: #1a1410; position: relative; overflow: hidden; box-shadow: 0 2px 8px rgba(184,134,11,0.35), inset 0 1px 0 rgba(255,255,255,0.4); }
+  .btn-gold-shiny::after { content: ''; position: absolute; top: -50%; left: -75%; width: 50%; height: 200%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent); transform: skewX(-25deg); transition: left 0.6s ease; }
+  .btn-gold-shiny:hover::after { left: 125%; }
+</style>
+</head>
+<body class="bg-white text-black antialiased">
+
+<!-- Nav -->
+<nav class="bg-white/95 backdrop-blur border-b border-black/10 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="images/sea-gc-logo.png?v=4" alt="SEA GC Realty" class="h-9 md:h-10 w-auto">
+      <span class="font-display text-xl md:text-2xl font-semibold tracking-tight">SEA GC Realty</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-wider">
+      <a href="services.html" class="hover:text-gold-500 transition">Services</a>
+      <a href="investors.html" class="text-gold-500 underline underline-offset-4">Investors</a>
+      <a href="about.html" class="hover:text-gold-500 transition">About</a>
+      <a href="how-we-close.html" class="hover:text-gold-500 transition">How We Close</a>
+      <a href="contact.html" class="bg-black text-white px-5 py-2 hover:bg-gray-800 transition">Contact</a>
+    </div>
+    <button id="navToggle" aria-label="Open menu" class="md:hidden p-2 -mr-2 text-black focus:outline-none">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-black/10 bg-white text-sm uppercase tracking-wider">
+    <a href="services.html" class="block py-3 px-6 hover:bg-gray-50">Services</a>
+    <a href="investors.html" class="block py-3 px-6 text-gold-500 bg-gray-50">Investors</a>
+    <a href="about.html" class="block py-3 px-6 hover:bg-gray-50">About</a>
+    <a href="how-we-close.html" class="block py-3 px-6 hover:bg-gray-50">How We Close</a>
+    <a href="contact.html" class="block py-3 px-6 bg-black text-white hover:bg-gray-800">Contact</a>
+  </div>
+</nav>
+<script>
+  (function(){
+    var btn = document.getElementById('navToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (btn && menu) btn.addEventListener('click', function(){ menu.classList.toggle('hidden'); });
+  })();
+</script>
+
+<!-- Hero -->
+<section class="bg-black text-white">
+  <div class="max-w-6xl mx-auto px-6 py-24 md:py-36">
+    <p class="text-xs uppercase tracking-[0.3em] text-gold-400 mb-6">For investors</p>
+    <h1 class="font-display text-4xl sm:text-5xl md:text-8xl font-semibold leading-[1.02] tracking-tight max-w-4xl">
+      The pipeline<br><span class="italic text-gold-400">is real.</span>
+    </h1>
+    <p class="mt-10 text-lg md:text-xl text-white/70 max-w-2xl font-light leading-relaxed">
+      We source pre-foreclosure, expired distressed, and off-market flip candidates across Palm Beach and Broward Counties &mdash; with deal math built in, not added as an afterthought. The broker buys in this market. The leads we bring investors are the same ones we would buy ourselves.
+    </p>
+    <div class="mt-12 flex flex-wrap gap-4">
+      <a href="contact.html?topic=investor" class="btn-gold-shiny px-8 py-4 transition uppercase tracking-wider text-sm font-semibold rounded-lg inline-block">
+        Talk to us about deal flow
+      </a>
+      <a href="#how-we-source" class="border border-white/30 text-white px-8 py-4 hover:border-gold-400 hover:text-gold-400 transition uppercase tracking-wider text-sm">
+        How we source
+      </a>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="font-display text-4xl text-gold-400">150+</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-1">Expired leads/month</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-gold-400">60–150</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-1">Days before auction</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-gold-400">PBC + Broward</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-1">Two-county coverage</div>
+      </div>
+      <div>
+        <div class="font-display text-4xl text-gold-400">0–100</div>
+        <div class="text-xs uppercase tracking-widest text-white/50 mt-1">Scored vs closed comps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How we source -->
+<section id="how-we-source" class="bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="mb-14">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-3">The pipeline</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight">Three sources. All proprietary.</h2>
+      <p class="mt-5 max-w-2xl text-gray-600 font-light leading-relaxed">Most brokers show you the MLS. We run three separate data pipelines that surface deals before, alongside, and outside of what shows up on Zillow.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Pre-foreclosure -->
+      <div class="bg-black text-white p-8">
+        <div class="text-gold-400 text-xs uppercase tracking-widest mb-4">01 &mdash; Pre-Foreclosure</div>
+        <h3 class="font-display text-3xl font-semibold mb-4">Months before the auction.</h3>
+        <p class="text-white/70 text-sm leading-relaxed mb-6">We scrape the Palm Beach and Broward County foreclosure calendars weekly and cross-reference each property against the county property appraiser. Result: a list of homeowners facing auction in 60&ndash;150 days, with equity estimates, judgment amounts, and contact info, before the wholesaler mailers even hit the mailbox.</p>
+        <ul class="space-y-2 text-sm text-white/60">
+          <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9670;</span> Auction date, case number, judgment amount</li>
+          <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9670;</span> Equity estimate: market value minus judgment</li>
+          <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9670;</span> Property type, beds/baths, square footage</li>
+          <li class="flex gap-2"><span class="text-gold-400 mt-0.5">&#9670;</span> Owner name and address for outreach</li>
+        </ul>
+      </div>
+
+      <!-- Expired distressed -->
+      <div class="bg-gray-50 border border-black/10 p-8">
+        <div class="text-gold-500 text-xs uppercase tracking-widest mb-4">02 &mdash; Expired &amp; Distressed</div>
+        <h3 class="font-display text-3xl font-semibold mb-4">Sellers who couldn&rsquo;t close.</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">Every month, hundreds of SFR listings expire off the MLS in PBC and Broward without selling. We pull every one, look up the real owner name from the county property appraiser, and enrich each record with a direct phone number. The sellers are motivated by definition &mdash; they already tried the market and it didn&rsquo;t work.</p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500 mt-0.5">&#9670;</span> 150+ records per 30-day pull</li>
+          <li class="flex gap-2"><span class="text-gold-500 mt-0.5">&#9670;</span> Owner name from BCPA / PBCPAO (99%+ hit rate)</li>
+          <li class="flex gap-2"><span class="text-gold-500 mt-0.5">&#9670;</span> Days on market, price cuts, original vs final list price</li>
+          <li class="flex gap-2"><span class="text-gold-500 mt-0.5">&#9670;</span> Sorted by DOM &mdash; most frustrated seller first</li>
+        </ul>
+      </div>
+
+      <!-- Flip candidates -->
+      <div class="bg-white border border-black/10 p-8">
+        <div class="text-gray-500 text-xs uppercase tracking-widest mb-4">03 &mdash; Flip Candidates</div>
+        <h3 class="font-display text-3xl font-semibold mb-4">Scored. Not just listed.</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6">We run every active SFR listing in our coverage area against a scoring model that uses radius-based closed-sale comps &mdash; not asking prices &mdash; to find properties priced below what the neighborhood has actually traded for. Filtered for no-HOA, no 55+, pre-2000 construction, and 30+ DOM.</p>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gray-400 mt-0.5">&#9670;</span> 0&ndash;100 score vs 15 nearest closed sales</li>
+          <li class="flex gap-2"><span class="text-gray-400 mt-0.5">&#9670;</span> Discount vs sold median, in percent</li>
+          <li class="flex gap-2"><span class="text-gray-400 mt-0.5">&#9670;</span> Distress signals: REO, short sale, as-is, probate</li>
+          <li class="flex gap-2"><span class="text-gray-400 mt-0.5">&#9670;</span> Price cut count and days on market</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Deal math -->
+<section class="bg-gray-50 border-y border-black/10">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-3">The analysis</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight">We run the math before you make an offer.</h2>
+        <p class="mt-6 text-gray-700 leading-relaxed">Every deal we bring comes with a full investment analysis: PITI payment, estimated cap rate, monthly cash flow, and a plain-English summary of the exit. You are not paying a broker to print you an MLS sheet. You are paying for the work that happens before the MLS sheet.</p>
+        <div class="mt-8 space-y-4 text-gray-700">
+          <div class="flex gap-4 items-start">
+            <span class="text-gold-500 mt-1 text-lg">&#9670;</span>
+            <div><strong>Honest cap rates.</strong> We use actual comparable rents for the zip code and subtract vacancy, management, maintenance, and CapEx &mdash; not a top-line gross rent estimate.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-gold-500 mt-1 text-lg">&#9670;</span>
+            <div><strong>PITI modeled at your rate.</strong> We plug in current conventional or DSCR rates, 5% or 25% down depending on your strategy, and show the monthly carry before you make an offer.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-gold-500 mt-1 text-lg">&#9670;</span>
+            <div><strong>GC arm for rehab estimates.</strong> SEA GC LLC has a general contracting arm in the same market. For properties requiring renovation, we can walk the property and provide a scope-of-work estimate before you commit.</div>
+          </div>
+          <div class="flex gap-4 items-start">
+            <span class="text-gold-500 mt-1 text-lg">&#9670;</span>
+            <div><strong>Flood and insurance reality check.</strong> South Florida flood zone status and insurance costs kill more deals than price. We pull FEMA zone and flag high-risk properties before you spend money on inspection.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample deal card -->
+      <div>
+        <p class="text-xs uppercase tracking-widest text-gray-500 mb-4">Sample deal analysis</p>
+        <div class="bg-white border border-black/10 p-6">
+          <div class="flex items-start justify-between mb-4 pb-4 border-b border-black/10">
+            <div>
+              <div class="font-display text-2xl">1842 NW 12th Ave</div>
+              <div class="text-xs text-gray-500 mt-1">Fort Lauderdale, FL 33311 &mdash; Broward</div>
+            </div>
+            <div class="text-right">
+              <div class="bg-black text-white text-xs uppercase tracking-widest px-2 py-1">Score 74/100</div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-2 text-center mb-4">
+            <div class="bg-gray-50 border border-black/10 p-2 sm:p-3">
+              <div class="font-display text-base sm:text-xl text-black">$219,000</div>
+              <div class="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-500 mt-0.5">List Price</div>
+            </div>
+            <div class="bg-gray-50 border border-black/10 p-2 sm:p-3">
+              <div class="font-display text-base sm:text-xl text-gold-500">18%</div>
+              <div class="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-500 mt-0.5">Below Comps</div>
+            </div>
+            <div class="bg-gray-50 border border-black/10 p-2 sm:p-3">
+              <div class="font-display text-base sm:text-xl text-black">142</div>
+              <div class="text-[9px] sm:text-[10px] uppercase tracking-widest text-gray-500 mt-0.5">Days on Market</div>
+            </div>
+          </div>
+          <div class="space-y-1 text-sm">
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">Built / sqft</span><span class="font-medium">1968 &mdash; 1,140 sqft</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">Beds / baths</span><span class="font-medium">3 bd / 2 ba</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">HOA</span><span class="font-medium text-green-700">None</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">Price cuts</span><span class="font-medium">3 &mdash; down $31k total</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">Est. rent (3/2)</span><span class="font-medium">~$2,100/mo</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">PITI (5% down, 7%)</span><span class="font-medium">$1,610/mo</span></div>
+            <div class="flex justify-between py-1 border-b border-black/5"><span class="text-gray-500">Est. monthly cash flow</span><span class="font-medium text-green-700">+$240/mo</span></div>
+            <div class="flex justify-between py-1"><span class="text-gray-500">Distress signals</span><span class="font-medium text-gold-500">As-is, price cuts, long DOM</span></div>
+          </div>
+          <p class="mt-4 text-[10px] text-gray-400 uppercase tracking-widest">Illustrative example. Not a current or guaranteed offer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Investment strategies -->
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-3">Investment profiles</p>
+      <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight">What strategy are you running?</h2>
+      <p class="mt-5 max-w-xl mx-auto text-gray-600 font-light">We are set up for all of these. Tell us your model and we will point the pipeline at the right deals.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-px bg-black/10">
+
+      <div class="bg-white p-8">
+        <div class="font-display text-2xl mb-3">Fix &amp; Flip</div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Short timeline, need to buy below ARV, rehab, and exit. We identify properties with the highest discount vs comparable closed sales and flag distress signals (REO, short sale, estate, as-is) that signal seller motivation. Our GC arm can scope the rehab before you close.</p>
+        <ul class="space-y-1 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Properties scored 0&ndash;100 vs 6-month closed comps</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> ARV estimate from same radius-based comp pool</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Rehab scope walkthrough available before offer</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8">
+        <div class="font-display text-2xl mb-3">BRRRR</div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Buy, rehab, rent, refinance, repeat. We find undervalued SFRs with rental upside, run the post-refi cash-flow model, and identify properties where the stabilized value supports a cash-out refi that returns most or all of your capital. South Florida rents and DSCR lending are both favorable right now.</p>
+        <ul class="space-y-1 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Rental cash-flow analysis at market rents</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> DSCR refi modeling at 75% LTV post-rehab</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Lender introductions for DSCR and investor financing</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8">
+        <div class="font-display text-2xl mb-3">Live-In Flip (203k)</div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Buy a distressed property as a primary residence using an FHA 203k loan: 3.5% down, the rehab rolled into the mortgage, owner-occupant rates. Live in it while work is done, sell or refi after the seasoning period. Best for buyers who want to acquire a deal they could not otherwise afford to flip outright.</p>
+        <ul class="space-y-1 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> 203k-eligible property identification</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> GC arm familiar with FHA-compliant rehab requirements</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> 203k lender referrals in PBC and Broward</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-8">
+        <div class="font-display text-2xl mb-3">Pre-Foreclosure / Auction</div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">The highest-upside deals in this market are properties going to foreclosure auction, acquired before the auction date with a direct seller negotiation. We surface these 60&ndash;150 days ahead, with enough runway to negotiate, title-search, and arrange financing or cash reserves for the courthouse steps.</p>
+        <ul class="space-y-1 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Weekly list of PBC and Broward pre-foreclosures</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Judgment amount, equity estimate, auction date</li>
+          <li class="flex gap-2"><span class="text-gold-500">&#9670;</span> Direct outreach to owner before it hits any public list</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why SEA GC -->
+<section class="bg-black text-white">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-400 mb-4">Why work with us</p>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold tracking-tight text-white">The broker buys<br>in this market.</h2>
+        <p class="mt-6 text-white/70 leading-relaxed">We are not a general brokerage that added &ldquo;investor services&rdquo; to a website. SEA GC LLC is an active foreclosure and BRRRR investor in Palm Beach and Broward Counties. The general contracting arm is in the same market. The lead pipeline we use for our own deals is the same one we share with investor clients.</p>
+        <p class="mt-4 text-white/70 leading-relaxed">When we bring you a deal, we have already run the numbers. When we say a property needs $40k in work, it is because we have priced those trades. When we say the neighborhood supports $2,100/mo in rent, it is because we have rented in it.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="border border-gold-400/40 p-6">
+          <div class="font-display text-xl text-gold-400 mb-2">Broker BK3471395</div>
+          <p class="text-white/60 text-sm">Florida-licensed broker, active investor. Not a team lead running twenty deals for buyers at the same time &mdash; a broker who has bought, rehabbed, rented, and sold in the same market we are sourcing deals in.</p>
+        </div>
+        <div class="border border-white/15 p-6">
+          <div class="font-display text-xl text-white mb-2">GC arm included</div>
+          <p class="text-white/60 text-sm">SEA GC LLC holds a Florida General Contractor license. For properties requiring renovation, we can walk the property with you before the offer, price the scope, and coordinate contractors through close and construction.</p>
+        </div>
+        <div class="border border-white/15 p-6">
+          <div class="font-display text-xl text-white mb-2">Disclosed representation</div>
+          <p class="text-white/60 text-sm">We operate under Florida brokerage law &mdash; all dual-agency situations disclosed, all compensation documented. You get a clean chain of title and a broker who has to stand behind the advice they give.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Investor terms -->
+<section class="bg-white border-b border-black/10">
+  <div class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="md:col-span-2">
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-3">Investor terms</p>
+        <h2 class="font-display text-4xl font-semibold tracking-tight">Fee structures for active buyers.</h2>
+        <p class="mt-6 text-gray-700 leading-relaxed">We work with investors on terms that fit the deal type. The standard commission structure works for listed properties. For off-market, pre-foreclosure, or wholesale-adjacent deals, we offer flat-fee buy-side representation and assignment coordination that keeps the math clean.</p>
+        <p class="mt-4 text-gray-700 leading-relaxed">We do not share specifics publicly &mdash; terms depend on volume, deal type, and scope of work. If you are buying two or more properties per year in PBC or Broward, get in touch and we will have a direct conversation.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="contact.html?topic=investor" class="bg-black hover:bg-gray-800 text-white font-medium px-8 py-4 transition uppercase tracking-wider text-sm">
+            Discuss investor terms
+          </a>
+          <a href="tel:+15615522771" class="border border-black text-black font-medium px-8 py-4 hover:bg-black hover:text-white transition uppercase tracking-wider text-sm">
+            (561) 552-2771
+          </a>
+        </div>
+      </div>
+      <div class="space-y-3 text-sm">
+        <div class="border border-black/10 p-5">
+          <div class="font-semibold mb-1">Listed properties</div>
+          <p class="text-gray-600">Standard buy-side representation, documented in buyer agreement per NAR rules.</p>
+        </div>
+        <div class="border border-black/10 p-5">
+          <div class="font-semibold mb-1">Off-market / pre-foreclosure</div>
+          <p class="text-gray-600">Flat-fee buy-side representation available. Discuss scope before we engage.</p>
+        </div>
+        <div class="border border-black/10 p-5">
+          <div class="font-semibold mb-1">GC services</div>
+          <p class="text-gray-600">Rehab scopes and contractor coordination billed separately from brokerage.</p>
+        </div>
+        <div class="border border-black/10 p-5">
+          <div class="font-semibold mb-1">Portfolio clients</div>
+          <p class="text-gray-600">Volume arrangements for 3+ acquisitions/year. Call us directly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-white">
+  <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <p class="text-xs uppercase tracking-[0.3em] text-gold-500 mb-4">Get started</p>
+    <h2 class="font-display text-4xl md:text-6xl font-semibold tracking-tight">Tell us what you&rsquo;re<br>trying to buy.</h2>
+    <p class="mt-6 text-lg text-gray-600 font-light max-w-xl mx-auto leading-relaxed">Criteria, price range, strategy, timeline. We will tell you what the pipeline looks like right now and whether we are the right fit.</p>
+    <a href="contact.html?topic=investor" class="mt-10 inline-block bg-black hover:bg-gray-800 text-white font-medium px-12 py-5 transition uppercase tracking-wider text-sm">
+      Start the conversation
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white/60">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-4 gap-10 text-sm">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/sea-gc-logo.png?v=4" alt="" class="h-8 w-auto invert">
+        <span class="font-display text-xl text-white">SEA GC Realty</span>
+      </div>
+      <p class="text-xs leading-relaxed">SEA GC LLC<br>1532 SE 9th St<br>Deerfield Beach, FL 33441<br>(561) 552-2771</p>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Services</div>
+      <ul class="space-y-2">
+        <li><a href="services.html" class="hover:text-white">For Buyers</a></li>
+        <li><a href="services.html" class="hover:text-white">For Sellers</a></li>
+        <li><a href="investors.html" class="text-white">For Investors</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Company</div>
+      <ul class="space-y-2">
+        <li><a href="about.html" class="hover:text-white">About</a></li>
+        <li><a href="https://portal.bshoshan.com/apply" class="hover:text-white">Apply for portal access</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+        <li><a href="https://portal.bshoshan.com/login" class="hover:text-white">Agent Login</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-gold-400 font-semibold mb-3 uppercase tracking-widest text-xs">Legal &amp; Compliance</div>
+      <ul class="space-y-2 text-xs">
+        <li><a href="wire-fraud-warning.html" class="hover:text-white underline">Wire Fraud Warning</a></li>
+        <li>Broker of Record: Ben Shoshan</li>
+        <li>Broker BK3471395</li>
+        <li>Brokerage CQ1074963</li>
+        <li>Equal Housing Opportunity</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10 text-center text-xs py-4 text-white/30">&copy; 2026 SEA GC LLC. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
